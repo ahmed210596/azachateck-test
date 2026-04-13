@@ -20,7 +20,7 @@ Validated historical tracking by comparing snapshots across multiple runs.
 
 Analytics & Dashboards
 
-Tested dashboard filters (region, certification level, partner type).
+Tested dashboard filters ( certification level, partner name,referefrence).
 
 Verified that charts updated dynamically when new scraped data was added.
 
