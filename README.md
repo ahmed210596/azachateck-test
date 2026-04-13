@@ -1,4 +1,4 @@
-# azachateck-test
+# azachateck-test-odoo version 14
 Exercise 1 – Odoo Partner Monitor (azk_odoo_partner_monitor)
 Objective: Scrape partner data from the official Odoo Partners page, store historical changes, and provide dashboards for analysis.
 
