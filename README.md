@@ -24,7 +24,7 @@ Tested dashboard filters ( certification level, partner name,referefrence).
 
 Verified that charts updated dynamically when new scraped data was added.
 
-Resilience & Error Handling
+Resilience & Error Handling               
 
 Simulated network failures and invalid HTML responses.
 
@@ -69,4 +69,5 @@ Tested with no accounts matching filters → report returned empty with a clear 
 
 Tested with multiple currencies → verified correct grouping and currency symbols.
 
-Tested with hierarchy depth limits → confirmed parent-only levels were respected
+Tested with hierarchy depth limits → confirmed parent-only levels were respected                      <img width="1556" height="427" alt="image" src="https://github.com/user-attachments/assets/2c360c91-eb62-45e0-99f8-2512ba58ee7d" />
+
