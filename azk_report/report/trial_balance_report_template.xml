@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="report_trial_balance_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+
+                            <!-- ═══════════════════════════════════════════
+                                 Header
+                            ═══════════════════════════════════════════ -->
+                            <h2 class="text-center">Trial Balance</h2>
+                            <p class="text-center"> From <t t-esc="o.date_from" /> To <t
+                                    t-esc="o.date_to" />
+                            </p>
+                            <p class="text-center text-muted" style="font-size:11px;">
+                                <t t-esc="o.env.company.name" />
+                            </p>
+
+                            <!-- ═══════════════════════════════════════════
+                                 Applied filters summary
+                            ═══════════════════════════════════════════ -->
+                            <div class="row mb-2" style="font-size:11px;">
+                                <div class="col-6">
+                                    <t t-if="o.journal_id">
+                                        <strong>Journal:</strong>
+                                        <t t-esc="o.journal_id.name" />
+                                        &amp;nbsp; </t>
+                                    <t t-if="o.analytic_account_id">
+                                        <strong>Analytic Account:</strong>
+                                        <t t-esc="o.analytic_account_id.name" />
+                                    </t>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <t t-if="o.include_unposted">
+                                        <span class="badge badge-warning">Includes Unposted</span>
+                                    </t>
+                                    <t t-if="o.skip_zero_balance">
+                                        <span class="badge badge-secondary">Zero Balances Hidden</span>
+                                    </t>
+                                    <t t-if="o.hierarchy_subtotals">
+                                        <span class="badge badge-info">Hierarchy</span>
+                                    </t>
+                                    <t t-if="o.hierarchy_only_parents">
+                                        <span class="badge badge-info"> Parents Only – Level <t
+                                                t-esc="o.account_level_up_to" />
+                                        </span>
+                                    </t>
+                                </div>
+                            </div>
+
+                            <!-- ═══════════════════════════════════════════
+                                 Report table
+                            ═══════════════════════════════════════════ -->
+                            <t t-set="data" t-value="o._get_report_data()" />
+
+                            <table class="table table-sm table-bordered o_main_table">
+                                <thead>
+                                    <tr style="background-color:#f5f5f5;">
+                                        <th style="width:35%;">Account</th>
+                                        <t t-if="o.show_amount_currency">
+                                            <th class="text-center" style="width:8%;">Currency</th>
+                                            <th class="text-right" style="width:12%;">Amount
+                                                Currency</th>
+                                        </t>
+                                        <th class="text-right">Initial Balance</th>
+                                        <th class="text-right">Debit</th>
+                                        <th class="text-right">Credit</th>
+                                        <th class="text-right">Ending Balance</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <t t-foreach="data" t-as="line">
+
+                                        <!-- ─────────────────────────────
+                                             SUBTOTAL / GROUP header row
+                                        ───────────────────────────────── -->
+                                        <t t-if="line.get('line_type') == 'subtotal'">
+                                            <tr style="background-color:#e8f0fe; font-weight:bold;">
+                                                <td>
+                                                    <t t-esc="line['code']" />
+                                                    <t t-if="line.get('name')"> – <t
+                                                            t-esc="line['name']" />
+                                                    </t>
+                                                </td>
+                                                <t t-if="o.show_amount_currency">
+                                                    <!-- subtotals have no single currency -->
+                                                    <td />
+                                                    <td />
+                                                </t>
+                                                <td class="text-right">
+                                                    <span
+                                                        t-esc="line['initial']"
+                                                        t-options='{"widget": "monetary", "display_currency": o.env.company.currency_id}' />
+                                                </td>
+                                                <td class="text-right">
+                                                    <span
+                                                        t-esc="line['debit']"
+                                                        t-options='{"widget": "monetary", "display_currency": o.env.company.currency_id}' />
+                                                </td>
+                                                <td class="text-right">
+                                                    <span
+                                                        t-esc="line['credit']"
+                                                        t-options='{"widget": "monetary", "display_currency": o.env.company.currency_id}' />
+                                                </td>
+                                                <td class="text-right">
+                                                    <span
+                                                        t-esc="line['ending']"
+                                                        t-options='{"widget": "monetary", "display_currency": o.env.company.currency_id}' />
+                                                </td>
+                                            </tr>
+                                        </t>
+
+                                        <!-- ─────────────────────────────
+                                             DETAIL account row
+                                        ───────────────────────────────── -->
+                                        <t t-if="line.get('line_type') == 'detail'">
+                                            <tr>
+                                                <td style="padding-left:20px;">
+                                                    <span t-esc="line['code']" /> – <span
+                                                        t-esc="line['name']" />
+                                                </td>
+                                                <t t-if="o.show_amount_currency">
+                                                    <td class="text-center">
+                                                        <span t-esc="line.get('currency', '')" />
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <span
+                                                            t-esc="line.get('amount_currency', 0.0)" />
+                                                        <t t-esc="' ' + line.get('currency', '')" />
+                                                    </td>
+                                                </t>
+                                                <td class="text-right">
+                                                    <span
+                                                        t-esc="line['initial']"
+                                                        t-options='{"widget": "monetary", "display_currency": o.env.company.currency_id}' />
+                                                </td>
+                                                <td class="text-right">
+                                                    <span
+                                                        t-esc="line['debit']"
+                                                        t-options='{"widget": "monetary", "display_currency": o.env.company.currency_id}' />
+                                                </td>
+                                                <td class="text-right">
+                                                    <span
+                                                        t-esc="line['credit']"
+                                                        t-options='{"widget": "monetary", "display_currency": o.env.company.currency_id}' />
+                                                </td>
+                                                <td class="text-right">
+                                                    <span
+                                                        t-esc="line['ending']"
+                                                        t-options='{"widget": "monetary", "display_currency": o.env.company.currency_id}' />
+                                                </td>
+                                            </tr>
+                                        </t>
+
+                                    </t><!--
+                                    end t-foreach -->
+                                </tbody>
+
+                                <!-- ═══════════════════════════════════════
+                                     Grand total footer
+                                ═══════════════════════════════════════ -->
+                                <tfoot>
+                                    <tr
+                                        style="background-color:#343a40; color:#fff; font-weight:bold;">
+                                        <td>Total</td>
+                                        <t t-if="o.show_amount_currency">
+                                            <td />
+                                            <td />
+                                        </t>
+                                        <td class="text-right">
+                                            <span
+                                                t-esc="sum(l['initial'] for l in data if l.get('line_type') == 'detail')"
+                                                t-options='{"widget": "monetary", "display_currency": o.env.company.currency_id}' />
+                                        </td>
+                                        <td class="text-right">
+                                            <span
+                                                t-esc="sum(l['debit'] for l in data if l.get('line_type') == 'detail')"
+                                                t-options='{"widget": "monetary", "display_currency": o.env.company.currency_id}' />
+                                        </td>
+                                        <td class="text-right">
+                                            <span
+                                                t-esc="sum(l['credit'] for l in data if l.get('line_type') == 'detail')"
+                                                t-options='{"widget": "monetary", "display_currency": o.env.company.currency_id}' />
+                                        </td>
+                                        <td class="text-right">
+                                            <span
+                                                t-esc="sum(l['ending'] for l in data if l.get('line_type') == 'detail')"
+                                                t-options='{"widget": "monetary", "display_currency": o.env.company.currency_id}' />
+                                        </td>
+                                    </tr>
+                                </tfoot>
+
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+</odoo>

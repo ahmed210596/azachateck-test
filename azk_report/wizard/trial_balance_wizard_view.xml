@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_trial_balance_wizard" model="ir.ui.view">
+            <field name="name">trial.balance.wizard.form</field>
+            <field name="model">trial.balance.wizard</field>
+            <field name="arch" type="xml">
+
+                <form string="Trial Balance">
+
+                    <group>
+                        <group string="Options">
+                            <field name="include_unposted" />
+                            <field name="hierarchy_subtotals" />
+                            <field name="hierarchy_only_parents" />
+                            <field name="account_level_up_to"
+                                attrs="{'invisible': [('hierarchy_only_parents', '=', False)], 'required': [('hierarchy_only_parents', '=', True)]}" />
+                        </group>
+
+                        <group string="Filters">
+                            <field name="account_ids_text" placeholder="e.g. 101, 201" />
+                            <field name="journal_id" options="{'no_create': True}" />
+                            <field name="analytic_account_id" options="{'no_create': True}" />
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <field name="skip_zero_balance" />
+                            <field name="show_amount_currency" />
+                        </group>
+
+                        <group>
+                            <field name="date_from" />
+                            <field name="date_to" />
+                        </group>
+                    </group>
+
+                    <footer>
+                        <button name="action_preview" string="Preview" type="object"
+                            class="btn-primary" />
+                        <button name="action_pdf" string="PDF" type="object" class="btn-secondary" />
+                        <button name="action_xlsx" string="XLSX" type="object" class="btn-secondary" />
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+
+                </form>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

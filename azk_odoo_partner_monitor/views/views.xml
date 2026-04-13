@@ -1,0 +1,178 @@
+<odoo>
+    <record id="action_partner_monitor_partners" model="ir.actions.act_window">
+        <field name="name">Partners</field>
+        <field name="res_model">azk_odoo_partner_monitor.partner</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="action_partner_monitor_countries" model="ir.actions.act_window">
+        <field name="name">Countries</field>
+        <field name="res_model">azk_odoo_partner_monitor.country</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_partner_monitor_references" model="ir.actions.act_window">
+        <field name="name">References</field>
+        <field name="res_model">azk_odoo_partner_monitor.reference</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_partner_monitor_status_history" model="ir.actions.act_window">
+        <field name="name">Status History</field>
+        <field name="res_model">azk_odoo_partner_monitor.status.history</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_partner_tree" model="ir.ui.view">
+        <field name="name">partner.tree</field>
+        <field name="model">azk_odoo_partner_monitor.partner</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="current_status" />
+                <field name="country_id" />
+                <field name="first_seen_on" />
+                <field name="retention_rate" />
+                <field name="total_references_count" />
+                <field name="largest_project_size" />
+                <field name="average_project_size" />
+                <field name="to_reprocess_references" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">partner.form</field>
+        <field name="model">azk_odoo_partner_monitor.partner</field>
+        <field name="arch" type="xml">
+            <form string="Partner">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="partner_url" />
+                        <field name="current_status" />
+                        <field name="country_id" />
+                        <field name="first_seen_on" />
+                        <field name="retention_rate" />
+                        <field name="total_references_count" />
+                        <field name="largest_project_size" />
+                        <field name="average_project_size" />
+                        <field name="to_reprocess_references" />
+                    </group>
+                    <notebook>
+                        <page string="References">
+                            <field name="reference_ids" />
+                        </page>
+                        <page string="Status History">
+                            <field name="status_history_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_partner_pivot" model="ir.ui.view">
+        <field name="name">partner.pivot</field>
+        <field name="model">azk_odoo_partner_monitor.partner</field>
+        <field name="arch" type="xml">
+            <pivot string="Partner Analysis">
+                <field name="country_id" type="row" />
+                <field name="current_status" type="col" />
+                <field name="total_references_count" type="measure" />
+                <field name="largest_project_size" type="measure" />
+                <field name="average_project_size" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_country_tree" model="ir.ui.view">
+        <field name="name">country.tree</field>
+        <field name="model">azk_odoo_partner_monitor.country</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="active" />
+                <field name="total_partner_count" />
+                <field name="to_reprocess_partners" />
+                <field name="country_code" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_reference_tree" model="ir.ui.view">
+        <field name="name">reference.tree</field>
+        <field name="model">azk_odoo_partner_monitor.reference</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="partner_id" />
+                <field name="name" />
+                <field name="is_active" />
+                <field name="added_on" />
+                <field name="removed_on" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_status_history_tree" model="ir.ui.view">
+        <field name="name">status.history.tree</field>
+        <field name="model">azk_odoo_partner_monitor.status.history</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="partner_id" />
+                <field name="previous_status" />
+                <field name="new_status" />
+                <field name="change_type" />
+                <field name="change_date" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_status_history_form" model="ir.ui.view">
+        <field name="name">status.history.form</field>
+        <field name="model">azk_odoo_partner_monitor.status.history</field>
+        <field name="arch" type="xml">
+            <form string="Status History">
+                <sheet>
+                    <group>
+                        <field name="partner_id" />
+                        <field name="previous_status" />
+                        <field name="new_status" />
+                        <field name="change_type" />
+                        <field name="change_date" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="menu_partner_monitor_root"
+        name="Partner Monitor"
+        sequence="10" />
+
+    <menuitem id="menu_partner_monitor_partners"
+        name="Partners"
+        parent="menu_partner_monitor_root"
+        sequence="20"
+        action="action_partner_monitor_partners" />
+
+    <menuitem id="menu_partner_monitor_countries"
+        name="Countries"
+        parent="menu_partner_monitor_root"
+        sequence="30"
+        action="action_partner_monitor_countries" />
+
+    <menuitem id="menu_partner_monitor_references"
+        name="References"
+        parent="menu_partner_monitor_root"
+        sequence="40"
+        action="action_partner_monitor_references" />
+
+    <menuitem id="menu_partner_monitor_status_history"
+        name="Status History"
+        parent="menu_partner_monitor_root"
+        sequence="50"
+        action="action_partner_monitor_status_history" />
+
+</odoo>

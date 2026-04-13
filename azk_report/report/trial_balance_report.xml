@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="action_report_trial_balance" model="ir.actions.report">
+            <field name="name">Trial Balance</field>
+            <field name="model">trial.balance.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">azk_report.report_trial_balance_template</field>
+            <field name="report_file">azk_report.report_trial_balance_template</field>
+            <field name="binding_model_id" ref="model_trial_balance_wizard" />
+            <field name="binding_type">report</field>
+        </record>
+
+        <record id="action_trial_balance_xlsx" model="ir.actions.report">
+            <field name="name">Trial Balance XLSX</field>
+            <field name="model">trial.balance.wizard</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">azk_report.trial_balance_xlsx</field>
+            <field name="report_file">azk_report.trial_balance_xlsx</field>
+            <field name="print_report_name">'Trial Balance - %s' % (object.date_from)</field>
+            <field name="binding_model_id" ref="model_trial_balance_wizard" />
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

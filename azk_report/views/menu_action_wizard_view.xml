@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="action_trial_balance_wizard" model="ir.actions.act_window">
+            <field name="name">Trial Balance Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">trial.balance.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_trial_balance_wizard" />
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+            id="menu_trial_balance_wizard"
+            name="Trial Balance (Custom)"
+            parent="account.menu_finance_reports"
+            action="action_trial_balance_wizard"
+            sequence="10" />
+
+    </data>
+</odoo>

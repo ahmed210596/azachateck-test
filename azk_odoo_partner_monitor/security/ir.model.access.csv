@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_country_user,access.country.user,model_azk_odoo_partner_monitor_country,base.group_user,1,1,1,1
+access_partner_user,access.partner.user,model_azk_odoo_partner_monitor_partner,base.group_user,1,1,1,1
+access_reference_user,access.reference.user,model_azk_odoo_partner_monitor_reference,base.group_user,1,1,1,1
+access_status_history_user,access.status.history.user,model_azk_odoo_partner_monitor_status_history,base.group_user,1,1,1,1
+access_scraper_user,access.scraper.user,model_azk_odoo_partner_monitor_scraper,base.group_user,1,1,1,1

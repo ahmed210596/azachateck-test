@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="country_3" model="azk_odoo_partner_monitor.country">
+            <field name="name">Afghanistan</field>
+            <field name="country_code">3</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_239" model="azk_odoo_partner_monitor.country">
+            <field name="name">Afrique du sud</field>
+            <field name="country_code">239</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_6" model="azk_odoo_partner_monitor.country">
+            <field name="name">Albanie</field>
+            <field name="country_code">6</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_61" model="azk_odoo_partner_monitor.country">
+            <field name="name">Algérie</field>
+            <field name="country_code">61</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_56" model="azk_odoo_partner_monitor.country">
+            <field name="name">Allemagne</field>
+            <field name="country_code">56</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_1" model="azk_odoo_partner_monitor.country">
+            <field name="name">Andorre</field>
+            <field name="country_code">1</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_9" model="azk_odoo_partner_monitor.country">
+            <field name="name">Angola</field>
+            <field name="country_code">9</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_5" model="azk_odoo_partner_monitor.country">
+            <field name="name">Anguilla</field>
+            <field name="country_code">5</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_10" model="azk_odoo_partner_monitor.country">
+            <field name="name">Antarctique</field>
+            <field name="country_code">10</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_4" model="azk_odoo_partner_monitor.country">
+            <field name="name">Antigua et Barbuda</field>
+            <field name="country_code">4</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_8" model="azk_odoo_partner_monitor.country">
+            <field name="name">Antilles Néerlandaises</field>
+            <field name="country_code">8</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_185" model="azk_odoo_partner_monitor.country">
+            <field name="name">Arabie Saoudite</field>
+            <field name="country_code">185</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_11" model="azk_odoo_partner_monitor.country">
+            <field name="name">Argentine</field>
+            <field name="country_code">11</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_7" model="azk_odoo_partner_monitor.country">
+            <field name="name">Arménie</field>
+            <field name="country_code">7</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_15" model="azk_odoo_partner_monitor.country">
+            <field name="name">Aruba</field>
+            <field name="country_code">15</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_14" model="azk_odoo_partner_monitor.country">
+            <field name="name">Australie</field>
+            <field name="country_code">14</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_13" model="azk_odoo_partner_monitor.country">
+            <field name="name">Autriche</field>
+            <field name="country_code">13</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_16" model="azk_odoo_partner_monitor.country">
+            <field name="name">Azerbaïdjan</field>
+            <field name="country_code">16</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_30" model="azk_odoo_partner_monitor.country">
+            <field name="name">Bahamas</field>
+            <field name="country_code">30</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_23" model="azk_odoo_partner_monitor.country">
+            <field name="name">Bahreïn</field>
+            <field name="country_code">23</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_18" model="azk_odoo_partner_monitor.country">
+            <field name="name">Barbade</field>
+            <field name="country_code">18</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_20" model="azk_odoo_partner_monitor.country">
+            <field name="name">Belgique</field>
+            <field name="country_code">20</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_19" model="azk_odoo_partner_monitor.country">
+            <field name="name">Bengladesh</field>
+            <field name="country_code">19</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_26" model="azk_odoo_partner_monitor.country">
+            <field name="name">Bermudes</field>
+            <field name="country_code">26</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_31" model="azk_odoo_partner_monitor.country">
+            <field name="name">Bhoutan</field>
+            <field name="country_code">31</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_139" model="azk_odoo_partner_monitor.country">
+            <field name="name">Birmanie</field>
+            <field name="country_code">139</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_34" model="azk_odoo_partner_monitor.country">
+            <field name="name">Biélorussie</field>
+            <field name="country_code">34</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_28" model="azk_odoo_partner_monitor.country">
+            <field name="name">Bolivie</field>
+            <field name="country_code">28</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_251" model="azk_odoo_partner_monitor.country">
+            <field name="name">Bonaire, Saint-Eustache et Saba</field>
+            <field name="country_code">251</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_17" model="azk_odoo_partner_monitor.country">
+            <field name="name">Bosnie-Herzégovine</field>
+            <field name="country_code">17</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_33" model="azk_odoo_partner_monitor.country">
+            <field name="name">Botswana</field>
+            <field name="country_code">33</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_27" model="azk_odoo_partner_monitor.country">
+            <field name="name">Brunéi Darussalam</field>
+            <field name="country_code">27</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_29" model="azk_odoo_partner_monitor.country">
+            <field name="name">Brésil</field>
+            <field name="country_code">29</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_22" model="azk_odoo_partner_monitor.country">
+            <field name="name">Bulgarie</field>
+            <field name="country_code">22</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_21" model="azk_odoo_partner_monitor.country">
+            <field name="name">Burkina Faso</field>
+            <field name="country_code">21</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_24" model="azk_odoo_partner_monitor.country">
+            <field name="name">Burundi</field>
+            <field name="country_code">24</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_25" model="azk_odoo_partner_monitor.country">
+            <field name="name">Bénin</field>
+            <field name="country_code">25</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_112" model="azk_odoo_partner_monitor.country">
+            <field name="name">Cambodge</field>
+            <field name="country_code">112</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_45" model="azk_odoo_partner_monitor.country">
+            <field name="name">Cameroun</field>
+            <field name="country_code">45</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_36" model="azk_odoo_partner_monitor.country">
+            <field name="name">Canada</field>
+            <field name="country_code">36</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_52" model="azk_odoo_partner_monitor.country">
+            <field name="name">Cap-Vert</field>
+            <field name="country_code">52</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_44" model="azk_odoo_partner_monitor.country">
+            <field name="name">Chili</field>
+            <field name="country_code">44</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_46" model="azk_odoo_partner_monitor.country">
+            <field name="name">Chine</field>
+            <field name="country_code">46</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_54" model="azk_odoo_partner_monitor.country">
+            <field name="name">Chypre</field>
+            <field name="country_code">54</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_47" model="azk_odoo_partner_monitor.country">
+            <field name="name">Colombie</field>
+            <field name="country_code">47</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_114" model="azk_odoo_partner_monitor.country">
+            <field name="name">Comores</field>
+            <field name="country_code">114</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_40" model="azk_odoo_partner_monitor.country">
+            <field name="name">Congo</field>
+            <field name="country_code">40</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_116" model="azk_odoo_partner_monitor.country">
+            <field name="name">Corée du Nord</field>
+            <field name="country_code">116</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_117" model="azk_odoo_partner_monitor.country">
+            <field name="name">Corée du Sud</field>
+            <field name="country_code">117</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_48" model="azk_odoo_partner_monitor.country">
+            <field name="name">Costa Rica</field>
+            <field name="country_code">48</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_95" model="azk_odoo_partner_monitor.country">
+            <field name="name">Croatie</field>
+            <field name="country_code">95</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_51" model="azk_odoo_partner_monitor.country">
+            <field name="name">Cuba</field>
+            <field name="country_code">51</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_252" model="azk_odoo_partner_monitor.country">
+            <field name="name">Curaçao</field>
+            <field name="country_code">252</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_42" model="azk_odoo_partner_monitor.country">
+            <field name="name">Côte d'Ivoire</field>
+            <field name="country_code">42</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_58" model="azk_odoo_partner_monitor.country">
+            <field name="name">Danemark</field>
+            <field name="country_code">58</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_57" model="azk_odoo_partner_monitor.country">
+            <field name="name">Djibouti</field>
+            <field name="country_code">57</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_59" model="azk_odoo_partner_monitor.country">
+            <field name="name">Dominique</field>
+            <field name="country_code">59</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_67" model="azk_odoo_partner_monitor.country">
+            <field name="name">Espagne</field>
+            <field name="country_code">67</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_63" model="azk_odoo_partner_monitor.country">
+            <field name="name">Estonie</field>
+            <field name="country_code">63</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_203" model="azk_odoo_partner_monitor.country">
+            <field name="name">Eswatini</field>
+            <field name="country_code">203</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_70" model="azk_odoo_partner_monitor.country">
+            <field name="name">Fiji</field>
+            <field name="country_code">70</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_69" model="azk_odoo_partner_monitor.country">
+            <field name="name">Finlande</field>
+            <field name="country_code">69</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_74" model="azk_odoo_partner_monitor.country">
+            <field name="name">France</field>
+            <field name="country_code">74</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_183" model="azk_odoo_partner_monitor.country">
+            <field name="name">Fédération de Russie</field>
+            <field name="country_code">183</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_75" model="azk_odoo_partner_monitor.country">
+            <field name="name">Gabon</field>
+            <field name="country_code">75</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_82" model="azk_odoo_partner_monitor.country">
+            <field name="name">Gambie</field>
+            <field name="country_code">82</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_77" model="azk_odoo_partner_monitor.country">
+            <field name="name">Georgie</field>
+            <field name="country_code">77</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_79" model="azk_odoo_partner_monitor.country">
+            <field name="name">Ghana</field>
+            <field name="country_code">79</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_80" model="azk_odoo_partner_monitor.country">
+            <field name="name">Gibraltar</field>
+            <field name="country_code">80</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_76" model="azk_odoo_partner_monitor.country">
+            <field name="name">Grenade</field>
+            <field name="country_code">76</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_81" model="azk_odoo_partner_monitor.country">
+            <field name="name">Groënland</field>
+            <field name="country_code">81</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_86" model="azk_odoo_partner_monitor.country">
+            <field name="name">Grèce</field>
+            <field name="country_code">86</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_84" model="azk_odoo_partner_monitor.country">
+            <field name="name">Guadeloupe</field>
+            <field name="country_code">84</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_89" model="azk_odoo_partner_monitor.country">
+            <field name="name">Guam</field>
+            <field name="country_code">89</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_88" model="azk_odoo_partner_monitor.country">
+            <field name="name">Guatemala</field>
+            <field name="country_code">88</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_253" model="azk_odoo_partner_monitor.country">
+            <field name="name">Guernesey</field>
+            <field name="country_code">253</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_83" model="azk_odoo_partner_monitor.country">
+            <field name="name">Guinée</field>
+            <field name="country_code">83</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_85" model="azk_odoo_partner_monitor.country">
+            <field name="name">Guinée Équatoriale</field>
+            <field name="country_code">85</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_90" model="azk_odoo_partner_monitor.country">
+            <field name="name">Guinée-Bissau</field>
+            <field name="country_code">90</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_91" model="azk_odoo_partner_monitor.country">
+            <field name="name">Guyane</field>
+            <field name="country_code">91</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_78" model="azk_odoo_partner_monitor.country">
+            <field name="name">Guyane française</field>
+            <field name="country_code">78</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_87" model="azk_odoo_partner_monitor.country">
+            <field name="name">Géorgie du Sud-et-les Îles Sandwich du Sud</field>
+            <field name="country_code">87</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_96" model="azk_odoo_partner_monitor.country">
+            <field name="name">Haïti</field>
+            <field name="country_code">96</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_94" model="azk_odoo_partner_monitor.country">
+            <field name="name">Honduras</field>
+            <field name="country_code">94</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_92" model="azk_odoo_partner_monitor.country">
+            <field name="name">Hong-Kong</field>
+            <field name="country_code">92</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_97" model="azk_odoo_partner_monitor.country">
+            <field name="name">Hongrie</field>
+            <field name="country_code">97</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_249" model="azk_odoo_partner_monitor.country">
+            <field name="name">Iles Åland</field>
+            <field name="country_code">249</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_101" model="azk_odoo_partner_monitor.country">
+            <field name="name">Inde</field>
+            <field name="country_code">101</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_98" model="azk_odoo_partner_monitor.country">
+            <field name="name">Indonésie</field>
+            <field name="country_code">98</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_103" model="azk_odoo_partner_monitor.country">
+            <field name="name">Irak</field>
+            <field name="country_code">103</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_104" model="azk_odoo_partner_monitor.country">
+            <field name="name">Iran</field>
+            <field name="country_code">104</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_99" model="azk_odoo_partner_monitor.country">
+            <field name="name">Irlande</field>
+            <field name="country_code">99</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_332" model="azk_odoo_partner_monitor.country">
+            <field name="name">Irlande du Nord</field>
+            <field name="country_code">332</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_105" model="azk_odoo_partner_monitor.country">
+            <field name="name">Islande</field>
+            <field name="country_code">105</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_100" model="azk_odoo_partner_monitor.country">
+            <field name="name">Israël</field>
+            <field name="country_code">100</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_106" model="azk_odoo_partner_monitor.country">
+            <field name="name">Italie</field>
+            <field name="country_code">106</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_107" model="azk_odoo_partner_monitor.country">
+            <field name="name">Jamaïque</field>
+            <field name="country_code">107</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_109" model="azk_odoo_partner_monitor.country">
+            <field name="name">Japon</field>
+            <field name="country_code">109</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_255" model="azk_odoo_partner_monitor.country">
+            <field name="name">Jersey</field>
+            <field name="country_code">255</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_108" model="azk_odoo_partner_monitor.country">
+            <field name="name">Jordanie</field>
+            <field name="country_code">108</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_120" model="azk_odoo_partner_monitor.country">
+            <field name="name">Kazakhstan</field>
+            <field name="country_code">120</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_110" model="azk_odoo_partner_monitor.country">
+            <field name="name">Kenya</field>
+            <field name="country_code">110</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_111" model="azk_odoo_partner_monitor.country">
+            <field name="name">Kirghizistan</field>
+            <field name="country_code">111</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_113" model="azk_odoo_partner_monitor.country">
+            <field name="name">Kiribati</field>
+            <field name="country_code">113</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_315" model="azk_odoo_partner_monitor.country">
+            <field name="name">Kosovo</field>
+            <field name="country_code">315</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_118" model="azk_odoo_partner_monitor.country">
+            <field name="name">Koweït</field>
+            <field name="country_code">118</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_181" model="azk_odoo_partner_monitor.country">
+            <field name="name">La Réunion</field>
+            <field name="country_code">181</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_121" model="azk_odoo_partner_monitor.country">
+            <field name="name">Laos</field>
+            <field name="country_code">121</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_35" model="azk_odoo_partner_monitor.country">
+            <field name="name">Le Belize</field>
+            <field name="country_code">35</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_127" model="azk_odoo_partner_monitor.country">
+            <field name="name">Lesotho</field>
+            <field name="country_code">127</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_130" model="azk_odoo_partner_monitor.country">
+            <field name="name">Lettonie</field>
+            <field name="country_code">130</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_122" model="azk_odoo_partner_monitor.country">
+            <field name="name">Liban</field>
+            <field name="country_code">122</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_126" model="azk_odoo_partner_monitor.country">
+            <field name="name">Liberia</field>
+            <field name="country_code">126</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_131" model="azk_odoo_partner_monitor.country">
+            <field name="name">Libye</field>
+            <field name="country_code">131</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_124" model="azk_odoo_partner_monitor.country">
+            <field name="name">Liechtenstein</field>
+            <field name="country_code">124</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_128" model="azk_odoo_partner_monitor.country">
+            <field name="name">Lituanie</field>
+            <field name="country_code">128</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_129" model="azk_odoo_partner_monitor.country">
+            <field name="name">Luxembourg</field>
+            <field name="country_code">129</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_141" model="azk_odoo_partner_monitor.country">
+            <field name="name">Macao</field>
+            <field name="country_code">141</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_137" model="azk_odoo_partner_monitor.country">
+            <field name="name">Macédoine du Nord</field>
+            <field name="country_code">137</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_135" model="azk_odoo_partner_monitor.country">
+            <field name="name">Madagascar</field>
+            <field name="country_code">135</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_151" model="azk_odoo_partner_monitor.country">
+            <field name="name">Malaisie</field>
+            <field name="country_code">151</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_149" model="azk_odoo_partner_monitor.country">
+            <field name="name">Malawi</field>
+            <field name="country_code">149</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_148" model="azk_odoo_partner_monitor.country">
+            <field name="name">Maldives</field>
+            <field name="country_code">148</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_138" model="azk_odoo_partner_monitor.country">
+            <field name="name">Mali</field>
+            <field name="country_code">138</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_146" model="azk_odoo_partner_monitor.country">
+            <field name="name">Malte</field>
+            <field name="country_code">146</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_132" model="azk_odoo_partner_monitor.country">
+            <field name="name">Maroc</field>
+            <field name="country_code">132</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_143" model="azk_odoo_partner_monitor.country">
+            <field name="name">Martinique</field>
+            <field name="country_code">143</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_147" model="azk_odoo_partner_monitor.country">
+            <field name="name">Maurice</field>
+            <field name="country_code">147</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_144" model="azk_odoo_partner_monitor.country">
+            <field name="name">Mauritanie</field>
+            <field name="country_code">144</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_237" model="azk_odoo_partner_monitor.country">
+            <field name="name">Mayotte</field>
+            <field name="country_code">237</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_150" model="azk_odoo_partner_monitor.country">
+            <field name="name">Mexique</field>
+            <field name="country_code">150</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_72" model="azk_odoo_partner_monitor.country">
+            <field name="name">Micronésie</field>
+            <field name="country_code">72</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_134" model="azk_odoo_partner_monitor.country">
+            <field name="name">Moldavie</field>
+            <field name="country_code">134</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_133" model="azk_odoo_partner_monitor.country">
+            <field name="name">Monaco</field>
+            <field name="country_code">133</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_140" model="azk_odoo_partner_monitor.country">
+            <field name="name">Mongolie</field>
+            <field name="country_code">140</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_50" model="azk_odoo_partner_monitor.country">
+            <field name="name">Montenegro</field>
+            <field name="country_code">50</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_145" model="azk_odoo_partner_monitor.country">
+            <field name="name">Montserrat</field>
+            <field name="country_code">145</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_152" model="azk_odoo_partner_monitor.country">
+            <field name="name">Mozambique</field>
+            <field name="country_code">152</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_153" model="azk_odoo_partner_monitor.country">
+            <field name="name">Namibie</field>
+            <field name="country_code">153</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_162" model="azk_odoo_partner_monitor.country">
+            <field name="name">Nauru</field>
+            <field name="country_code">162</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_158" model="azk_odoo_partner_monitor.country">
+            <field name="name">Nicaragua</field>
+            <field name="country_code">158</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_155" model="azk_odoo_partner_monitor.country">
+            <field name="name">Niger</field>
+            <field name="country_code">155</field>
+            <field name="active">1</field>
+        </record>
+
+        <record id="country_157" model="azk_odoo_partner_monitor.country">
+            <field name="name">Nigeria</field>
+            <field name="country_code">157</field>
+            <field name="active">1</field>
+        </record>
+
+    </data>
+</odoo>
