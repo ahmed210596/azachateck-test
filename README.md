@@ -71,4 +71,5 @@ Tested with multiple currencies → verified correct grouping and currency symbo
 
 Tested with hierarchy depth limits → confirmed parent-only levels were respected                      <img width="1556" height="427" alt="image" src="https://github.com/user-attachments/assets/2c360c91-eb62-45e0-99f8-2512ba58ee7d" />
 
-444268
+<img width="1889" height="652" alt="image" src="https://github.com/user-attachments/assets/b61b7507-f18e-49e7-9530-027070d3f672" />
+
