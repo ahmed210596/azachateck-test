@@ -5,7 +5,7 @@
     'description': 'Tracks Odoo partners, references, and status history with automated scraping.',
     'author': 'Ahmed',
     'category': 'Tools',
-    'depends': ['base','board'],
+    'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
         

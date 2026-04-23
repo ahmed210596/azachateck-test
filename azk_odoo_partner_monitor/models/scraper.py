@@ -65,10 +65,11 @@ class OdooPartnerScraper(models.AbstractModel):
         seen_partner_urls=set()
         scraped_count = 0
         while True:
-            # Correct URL format: /country/afghanistan-3 with ?page=N for pagination
+            
             url = f"{base_url.rstrip('/')}/country/{country_slug}-{country.country_code}"
             if page > 1:
                 url += f"/page/{page}"
+                
 
             _logger.info(f"Scraping {country.name} - Page {page} - URL: {url}")
 
@@ -110,7 +111,7 @@ class OdooPartnerScraper(models.AbstractModel):
                     partner_link = card.find('a', href=True)
                     partner_url = partner_link['href'] if partner_link else None
 
-                    if partner_url and partner.to_reprocess_references:
+                    if partner_url :
                         self._scrape_partner_references(partner_url, partner)
                         time.sleep(1)
                         
@@ -124,8 +125,8 @@ class OdooPartnerScraper(models.AbstractModel):
         
             except Exception as e:
                 _logger.error(f"Error on page {page} for {country.name}: {e}")
-
-                break
+                page+=1
+                continue
         country.write({
         'total_partner_count': scraped_count,
         'to_reprocess_partners': False,
@@ -233,7 +234,7 @@ class OdooPartnerScraper(models.AbstractModel):
         existing_names = set(existing_refs.mapped('name'))
         scraped_names_set = set(scraped_names)
 
-        # Create new references
+        
         for name in (scraped_names_set - existing_names):
             Reference.create({
                 'partner_id': partner.id,
@@ -270,11 +271,9 @@ class OdooPartnerScraper(models.AbstractModel):
 
             for item in items:
                 try:
-                    # Extract the numeric Odoo country ID from the href
-                    # e.g. href="/fr_FR/partners/country/afghanistan-3"
+                    
                     href = item.get('href', '')
-                    match = re.search(r'-(\d+)$', href)
-                    odoo_id = int(match.group(1)) if match else None
+                    
 
                     badge = item.find('span', class_='badge')
                     if not badge:
@@ -282,23 +281,23 @@ class OdooPartnerScraper(models.AbstractModel):
                         continue
 
                     count_str = badge.get_text(strip=True)
-                    badge.extract()  # Remove badge to isolate country name
+                    badge.extract()  
                     country_name = item.get_text(strip=True)
                     clean_count = ''.join(filter(str.isdigit, count_str))
 
-                    if clean_count and country_name and odoo_id is not None:
+                    if clean_count and country_name :
                         counts_dict[country_name] = {
                             'count': int(clean_count),
-                            'odoo_id': odoo_id,
+                            
                         }
                         _logger.debug(
-                            "Parsed country: %s -> %s partners (odoo_id=%s)",
-                            country_name, clean_count, odoo_id
+                            "Parsed country: %s -> %s partners ",
+                            country_name, clean_count
                         )
                     else:
                         _logger.warning(
-                            "Invalid data parsed. Country: %s | Count: %s | odoo_id: %s",
-                            country_name, count_str, odoo_id
+                            "Invalid data parsed. Country: %s | Count: %s",
+                            country_name, count_str
                         )
 
                 except Exception as parse_item_error:

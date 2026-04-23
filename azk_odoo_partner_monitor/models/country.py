@@ -8,7 +8,7 @@ class OdooPartnerCountry(models.Model):
     name = fields.Char(required=True)
     active = fields.Boolean(default=True)
 
-    # Numeric ID used by Odoo's website in partner URLs, e.g. /country/afghanistan-3
+    
     country_code = fields.Integer(string="Odoo Country ID")
 
     # Stored count from the last scrape (updated after scraping, not computed)

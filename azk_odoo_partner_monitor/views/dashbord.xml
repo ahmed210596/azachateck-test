@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
     <record id="view_partner_monitor_search_dashboard" model="ir.ui.view">
@@ -6,18 +5,27 @@
         <field name="model">azk_odoo_partner_monitor.partner</field>
         <field name="arch" type="xml">
             <search>
+                <field name="name" string="Partner" />
                 <field name="current_status" />
                 <field name="country_id" />
                 <field name="year_first_seen" />
                 <filter string="Gold" name="gold" domain="[('current_status','=','gold')]" />
                 <filter string="Silver" name="silver" domain="[('current_status','=','silver')]" />
                 <filter string="Ready" name="ready" domain="[('current_status','=','ready')]" />
+
+
                 <group expand="0" string="Group By">
                     <filter string="Country" name="group_country"
                         context="{'group_by':'country_id'}" />
                     <filter string="Status" name="group_status"
                         context="{'group_by':'current_status'}" />
+
+                    <filter string="Year" name="group_year" context="{'group_by':'year_first_seen'}" />
+
+
                 </group>
+
+
             </search>
         </field>
     </record>
@@ -26,7 +34,7 @@
         <field name="name">partner.monitor.graph.active</field>
         <field name="model">azk_odoo_partner_monitor.partner</field>
         <field name="arch" type="xml">
-            <graph string="Active Partners" type="bar" stacked="1">
+            <graph string="Partners by Country &amp; Status" type="bar" stacked="1">
                 <field name="country_id" />
                 <field name="current_status" />
             </graph>
@@ -37,78 +45,102 @@
         <field name="name">partner.monitor.graph.project</field>
         <field name="model">azk_odoo_partner_monitor.partner</field>
         <field name="arch" type="xml">
-            <graph string="Project Size Distribution" type="bar" stacked="1">
+            <graph string="Project Size by Country" type="bar" stacked="1">
                 <field name="country_id" />
                 <field name="project_size_bucket" />
             </graph>
         </field>
     </record>
 
-    <record id="action_top_5_active" model="ir.actions.act_window">
-        <field name="name">Top 5 Countries (Active Partners)</field>
-        <field name="res_model">azk_odoo_partner_monitor.partner</field>
-        <field name="view_mode">graph</field>
-        <field name="domain">[('is_top_5_country', '=', True)]</field>
-        <field name="view_id" ref="view_graph_active_partners" />
-        <field name="context">{'search_default_group_country': 1, 'search_default_group_status': 1}</field>
-    </record>
-
-    <record id="action_bottom_5_active" model="ir.actions.act_window">
-        <field name="name">Bottom 5 Countries (Active Partners)</field>
-        <field name="res_model">azk_odoo_partner_monitor.partner</field>
-        <field name="view_mode">graph</field>
-        <field name="domain">[('is_bottom_5_country', '=', True)]</field>
-        <field name="view_id" ref="view_graph_active_partners" />
-        <field name="context">{'search_default_group_country': 1, 'search_default_group_status': 1}</field>
-    </record>
-
-    <record id="action_top_5_project" model="ir.actions.act_window">
-        <field name="name">Top 5 Countries (Project Size)</field>
-        <field name="res_model">azk_odoo_partner_monitor.partner</field>
-        <field name="view_mode">graph</field>
-        <field name="domain">[('is_top_5_country', '=', True)]</field>
-        <field name="view_id" ref="view_graph_project_size" />
-        <field name="context">{'search_default_group_country': 1}</field>
-    </record>
-
-    <record id="action_bottom_5_project" model="ir.actions.act_window">
-        <field name="name">Bottom 5 Countries (Project Size)</field>
-        <field name="res_model">azk_odoo_partner_monitor.partner</field>
-        <field name="view_mode">graph</field>
-        <field name="domain">[('is_bottom_5_country', '=', True)]</field>
-        <field name="view_id" ref="view_graph_project_size" />
-        <field name="context">{'search_default_group_country': 1}</field>
-    </record>
-
-    <record id="view_partner_monitor_dashboard" model="ir.ui.view">
-        <field name="name">Partner Monitor Dashboard</field>
-        <field name="model">board.board</field>
+    <record id="view_graph_year" model="ir.ui.view">
+        <field name="name">partner.monitor.graph.year</field>
+        <field name="model">azk_odoo_partner_monitor.partner</field>
         <field name="arch" type="xml">
-            <form string="Partner Monitor Dashboard">
-                <board style="1-1">
-                    <column>
-                        <action name="%(action_top_5_active)d" string="Top 5 Active Countries" />
-                        <action name="%(action_bottom_5_active)d" string="Bottom 5 Active Countries" />
-                    </column>
-                    <column>
-                        <action name="%(action_top_5_project)d" string="Top 5 Project Sizes" />
-                        <action name="%(action_bottom_5_project)d" string="Bottom 5 Project Sizes" />
-                    </column>
-                </board>
-            </form>
+            <graph string="Partners by Year First Seen" type="bar">
+                <field name="year_first_seen" />
+                <field name="current_status" />
+            </graph>
         </field>
     </record>
 
-    <record id="open_partner_monitor_dashboard" model="ir.actions.act_window">
+    <record id="action_partner_dashboard" model="ir.actions.act_window">
         <field name="name">Dashboard</field>
-        <field name="res_model">board.board</field>
-        <field name="view_mode">form</field>
-        <field name="usage">menu</field>
-
+        <field name="res_model">azk_odoo_partner_monitor.partner</field>
+        <field name="view_mode">graph,pivot,list</field>
+        <field name="search_view_id" ref="view_partner_monitor_search_dashboard" />
 
     </record>
 
-    <menuitem id="menu_dashboard_main" name="Dashboard" parent="menu_partner_monitor_root"
-        sequence="1" action="open_partner_monitor_dashboard" />
+    <record id="action_top_5_active" model="ir.actions.act_window">
+        <field name="name">Top 5 Countries — Active Partners</field>
+        <field name="res_model">azk_odoo_partner_monitor.partner</field>
+        <field name="view_mode">graph</field>
+        <field name="domain">[('is_top_5_country','=',True)]</field>
+        <field name="view_id" ref="view_graph_active_partners" />
+        <field name="search_view_id" ref="view_partner_monitor_search_dashboard" />
+
+    </record>
+
+    <record
+        id="action_bottom_5_active" model="ir.actions.act_window">
+        <field name="name">Bottom 5 Countries — Active Partners</field>
+        <field name="res_model">azk_odoo_partner_monitor.partner</field>
+        <field name="view_mode">graph</field>
+        <field name="domain">[('is_bottom_5_country','=',True)]</field>
+        <field name="view_id" ref="view_graph_active_partners" />
+        <field name="search_view_id" ref="view_partner_monitor_search_dashboard" />
+
+    </record>
+
+    <record id="action_top_5_project" model="ir.actions.act_window">
+        <field name="name">Top 5 Countries — Project Size</field>
+        <field name="res_model">azk_odoo_partner_monitor.partner</field>
+        <field name="view_mode">graph</field>
+        <field name="domain">[('is_top_5_country','=',True)]</field>
+        <field name="view_id" ref="view_graph_project_size" />
+        <field name="search_view_id" ref="view_partner_monitor_search_dashboard" />
+
+    </record>
+
+    <record id="action_bottom_5_project" model="ir.actions.act_window">
+        <field name="name">Bottom 5 Countries — Project Size</field>
+        <field name="res_model">azk_odoo_partner_monitor.partner</field>
+        <field name="view_mode">graph</field>
+        <field name="domain">[('is_bottom_5_country','=',True)]</field>
+        <field name="view_id" ref="view_graph_project_size" />
+        <field name="search_view_id" ref="view_partner_monitor_search_dashboard" />
+
+    </record>
+
+    <menuitem id="menu_dashboard_main"
+        name="Dashboard"
+        parent="menu_partner_monitor_root"
+        sequence="1"
+        action="action_partner_dashboard" />
+
+    <menuitem id="menu_top5_project"
+        name="Top 5 Countries — Project Size"
+        parent="menu_dashboard_main"
+        sequence="2"
+        action="action_top_5_project" />
+
+    <menuitem id="menu_bottom5_project"
+        name="Bottom 5 Countries — Project Size"
+        parent="menu_dashboard_main"
+        sequence="3"
+        action="action_bottom_5_project" />
+
+
+    <menuitem id="menu_top5_partner"
+        name="Top 5 Countries — active partner"
+        parent="menu_dashboard_main"
+        sequence="2"
+        action="action_top_5_active" />
+
+    <menuitem id="menu_bottom5_partner"
+        name="Bottom 5 Countries — active partner"
+        parent="menu_dashboard_main"
+        sequence="3"
+        action="action_bottom_5_active" />
 
 </odoo>
