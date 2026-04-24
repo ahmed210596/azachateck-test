@@ -14,18 +14,6 @@
                 <filter string="Ready" name="ready" domain="[('current_status','=','ready')]" />
 
 
-                <group expand="0" string="Group By">
-                    <filter string="Country" name="group_country"
-                        context="{'group_by':'country_id'}" />
-                    <filter string="Status" name="group_status"
-                        context="{'group_by':'current_status'}" />
-
-                    <filter string="Year" name="group_year" context="{'group_by':'year_first_seen'}" />
-
-
-                </group>
-
-
             </search>
         </field>
     </record>
@@ -52,16 +40,6 @@
         </field>
     </record>
 
-    <record id="view_graph_year" model="ir.ui.view">
-        <field name="name">partner.monitor.graph.year</field>
-        <field name="model">azk_odoo_partner_monitor.partner</field>
-        <field name="arch" type="xml">
-            <graph string="Partners by Year First Seen" type="bar">
-                <field name="year_first_seen" />
-                <field name="current_status" />
-            </graph>
-        </field>
-    </record>
 
     <record id="action_partner_dashboard" model="ir.actions.act_window">
         <field name="name">Dashboard</field>
